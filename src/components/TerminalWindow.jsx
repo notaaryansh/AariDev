@@ -19,18 +19,20 @@ const TerminalWindow = ({ children }) => {
                 padding: '10px 15px',
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 borderBottom: '1px solid #30363d',
-                gap: '8px'
+                gap: '8px',
+                position: 'relative'
             }}>
                 {/* Window Controls */}
-                <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ff5f56' }}></div>
-                <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ffbd2e' }}></div>
-                <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#27c93f' }}></div>
+                <div style={{ position: 'absolute', left: '15px', display: 'flex', gap: '8px' }}>
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ff5f56' }}></div>
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ffbd2e' }}></div>
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#27c93f' }}></div>
+                </div>
 
                 {/* Title (Optional) */}
                 <div style={{
-                    flex: 1,
-                    textAlign: 'center',
                     color: '#8b949e',
                     fontSize: '0.8rem',
                     fontFamily: 'sans-serif',

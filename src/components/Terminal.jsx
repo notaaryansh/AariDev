@@ -33,9 +33,8 @@ const Terminal = () => {
     const hiddenInputRef = useRef(null);
     const bottomRef = useRef(null);
 
-    // Focus input on click
+    // Focus hidden input on click (for mobile keyboard)
     useEffect(() => {
-        if (inputRef.current) inputRef.current.focus();
         if (hiddenInputRef.current) hiddenInputRef.current.focus();
     }, [history]);
 
@@ -110,6 +109,23 @@ const Terminal = () => {
             if (hiddenInputRef.current) {
                 hiddenInputRef.current.value = '';
             }
+            e.preventDefault();
+        } else if (e.key === 'ArrowLeft') {
+            setCursorPos((prev) => Math.max(0, prev - 1));
+            e.preventDefault();
+        } else if (e.key === 'ArrowRight') {
+            setCursorPos((prev) => Math.min(input.length, prev + 1));
+            e.preventDefault();
+        } else if (e.key === 'Backspace') {
+            if (input.length > 0) {
+                const newInput = input.slice(0, -1);
+                setInput(newInput);
+                setCursorPos(newInput.length);
+                if (hiddenInputRef.current) {
+                    hiddenInputRef.current.value = newInput;
+                }
+            }
+            e.preventDefault();
         }
     };
 
@@ -120,6 +136,7 @@ const Terminal = () => {
         // Helper for welcome message
         const welcomeMessage = (
             <div>
+
                 <div style={{ color: '#27c93f', whiteSpace: 'pre-wrap', fontFamily: 'monospace', lineHeight: '1.2', marginBottom: '1rem' }}>
                     {`
     _              _
@@ -263,12 +280,9 @@ const Terminal = () => {
         <div
             className="terminal-content"
             onClick={() => {
-                if (inputRef.current) inputRef.current.focus();
                 if (hiddenInputRef.current) hiddenInputRef.current.focus();
             }}
             style={{ minHeight: '100%', outline: 'none' }}
-            tabIndex={0}
-            onKeyDown={handleKeyDown}
             ref={inputRef}
         >
             <input
