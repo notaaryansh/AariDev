@@ -101,8 +101,6 @@ const Terminal = () => {
         // Helper for welcome message
         const welcomeMessage = (
             <div>
-                <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Aaryansh Sahay</h1>
-                <div style={{ color: 'var(--dim-text)', marginBottom: '0.5rem' }}>or</div>
                 <div style={{ color: '#27c93f', whiteSpace: 'pre-wrap', fontFamily: 'monospace', lineHeight: '1.2', marginBottom: '1rem' }}>
                     {`
     _              _
