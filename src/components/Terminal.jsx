@@ -30,11 +30,13 @@ const Terminal = () => {
     const [showCursor, setShowCursor] = useState(true);
     const [isTyping, setIsTyping] = useState(false);
     const inputRef = useRef(null);
+    const hiddenInputRef = useRef(null);
     const bottomRef = useRef(null);
 
     // Focus input on click
     useEffect(() => {
         if (inputRef.current) inputRef.current.focus();
+        if (hiddenInputRef.current) hiddenInputRef.current.focus();
     }, [history]);
 
     // Auto-scroll to bottom
@@ -91,6 +93,23 @@ const Terminal = () => {
         } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
             setInput((prev) => prev.slice(0, cursorPos) + e.key + prev.slice(cursorPos));
             setCursorPos((prev) => prev + 1);
+        }
+    };
+
+    const handleHiddenInputChange = (e) => {
+        const value = e.target.value;
+        setInput(value);
+        setCursorPos(value.length);
+    };
+
+    const handleHiddenInputKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            executeCommand(input);
+            setInput('');
+            setCursorPos(0);
+            if (hiddenInputRef.current) {
+                hiddenInputRef.current.value = '';
+            }
         }
     };
 
@@ -243,12 +262,32 @@ const Terminal = () => {
     return (
         <div
             className="terminal-content"
-            onClick={() => inputRef.current && inputRef.current.focus()}
+            onClick={() => {
+                if (inputRef.current) inputRef.current.focus();
+                if (hiddenInputRef.current) hiddenInputRef.current.focus();
+            }}
             style={{ minHeight: '100%', outline: 'none' }}
             tabIndex={0}
             onKeyDown={handleKeyDown}
             ref={inputRef}
         >
+            <input
+                ref={hiddenInputRef}
+                type="text"
+                value={input}
+                onChange={handleHiddenInputChange}
+                onKeyDown={handleHiddenInputKeyDown}
+                style={{
+                    position: 'absolute',
+                    left: '-9999px',
+                    opacity: 0,
+                    pointerEvents: 'none'
+                }}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+            />
             {history.map((entry, index) => (
                 <div key={index} style={{ marginBottom: '1rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
