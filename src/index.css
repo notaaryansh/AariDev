@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #0d1117;
+  --text-color: #00ff00;
+  --dim-text: #008f00;
+  --font-stack: 'JetBrains Mono', 'Courier New', Courier, monospace;
+  --desktop-bg: #282c34;
+  /* Dark gray/blue desktop background */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--desktop-bg);
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--text-color);
+  font-family: var(--font-stack);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dim-text);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
