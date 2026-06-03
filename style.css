@@ -40,12 +40,13 @@ main {
 .intro {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 64px;
 }
 
 .intro-text {
   flex: 1;
+  max-width: 62ch;
 }
 
 .intro-photo {
@@ -91,6 +92,7 @@ main {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .links a {
@@ -186,14 +188,12 @@ h2 {
   }
 
   .intro {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 24px;
+    gap: 20px;
   }
 
   .intro-photo img {
-    width: 140px;
-    height: 170px;
+    width: 100px;
+    height: 130px;
   }
 
   .two-col {
