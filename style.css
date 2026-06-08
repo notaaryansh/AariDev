@@ -80,11 +80,13 @@ main {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #000;
+  cursor: alias;
 }
 
 .inline-link:hover {
   color: #333;
   border-bottom-color: #333;
+  cursor: alias;
 }
 
 .links {
@@ -141,11 +143,13 @@ section {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #000;
+  cursor: alias;
 }
 
 .blog-list a:hover {
   color: #333;
   border-bottom-color: #333;
+  cursor: alias;
 }
 
 h2 {
@@ -182,6 +186,72 @@ h2 {
   color: #333;
 }
 
+.dash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #333;
+}
+
+.dash-list li {
+  padding-left: 2ch;
+  text-indent: -2ch;
+}
+
+.dash-list li::before {
+  content: "- ";
+}
+
+.tinkerings {
+  margin-bottom: 48px;
+}
+
+.tinker-entry {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.tinker-entry:last-child {
+  margin-bottom: 0;
+}
+
+.tinker-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
+.tinker-text strong {
+  font-weight: 500;
+  color: #000;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.tinker-text p {
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.tinker-text p:last-child {
+  margin-bottom: 0;
+}
+
+.tinker-text .small {
+  font-size: 13px;
+}
+
+video::cue {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-family: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 14px;
+}
+
 @media (max-width: 700px) {
   main {
     padding: 48px 20px;
@@ -212,5 +282,10 @@ h2 {
   .entry-header {
     flex-direction: column;
     gap: 2px;
+  }
+
+  .tinker-entry {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

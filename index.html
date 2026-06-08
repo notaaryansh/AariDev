@@ -3,8 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aaryansh Sahay</title>
-    <link rel="stylesheet" href="style.css?v=23" />
+    <title>Aaryansh (Aari) Sahay</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="description" content="Aaryansh (Aari) Sahay — building tvara. Interested in explainable AI, scalable software, and reverse engineering." />
+    <meta name="author" content="Aaryansh (Aari) Sahay" />
+    <meta property="og:title" content="Aaryansh (Aari) Sahay" />
+    <meta property="og:description" content="Aaryansh (Aari) Sahay — building tvara. Interested in explainable AI, scalable software, and reverse engineering." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Aaryansh (Aari) Sahay" />
+    <meta name="twitter:description" content="Aaryansh (Aari) Sahay — building tvara. Interested in explainable AI, scalable software, and reverse engineering." />
+    <link rel="stylesheet" href="style.css?v=27" />
   </head>
   <body>
     <main>
@@ -32,26 +41,36 @@
 
           <div class="entry">
             <div class="entry-header">
-              <strong>founding engineer, pally</strong>
+              <strong>founding engineer, <a href="https://pally.com" class="inline-link">pally</a></strong>
               <span>2025 — 2026</span>
             </div>
-            <p>engineer #1. built a people search engine over 2m+ records. reverse-engineered private apis across linkedin, x, and whatsapp.</p>
+            <ul class="dash-list">
+              <li>engineer #1.</li>
+              <li>built a people search engine over 2m+ records.</li>
+              <li>reverse-engineered private apis across linkedin, x, and whatsapp.</li>
+            </ul>
           </div>
 
           <div class="entry">
             <div class="entry-header">
-              <strong>ml engineer intern, home depot</strong>
+              <strong>ml engineer intern, <a href="https://www.homedepot.com" class="inline-link">home depot</a></strong>
               <span>2024</span>
             </div>
-            <p>llm evaluation for a chatbot rolling out across all stores. image similarity algorithm that cut compute 30% for self-checkout cv.</p>
+            <ul class="dash-list">
+              <li>llm evaluation for a chatbot rolling out across all stores.</li>
+              <li>image similarity algorithm that cut compute 30% for self-checkout for billing.</li>
+            </ul>
           </div>
 
           <div class="entry">
             <div class="entry-header">
-              <strong>data scientist, tata communications</strong>
+              <strong>data scientist, <a href="https://www.tatacommunications.com" class="inline-link">tata communications</a></strong>
               <span>2022 — 2023</span>
             </div>
-            <p>tracked 20k+ users across two countries to identify malicious activity. processed 100gb+ of user data.</p>
+            <ul class="dash-list">
+              <li>created an ai based cybersecurity system that tracked 20k+ users across two countries to identify malicious activity.</li>
+              <li>processed 100gb+ of user data.</li>
+            </ul>
           </div>
         </section>
 
@@ -66,6 +85,41 @@
           </ul>
         </section>
       </div>
+
+      <!--
+      <section class="tinkerings">
+        <h2>tinkerings</h2>
+
+        <div class="tinker-entry">
+          <div class="tinker-video">
+            <video controls preload="metadata" muted playsinline poster="">
+              <source src="/videos/runtime-modding.mp4" type="video/mp4" />
+              your browser doesn't support html5 video.
+            </video>
+          </div>
+          <div class="tinker-text">
+            <strong>runtime modding engine</strong>
+            <p>a small engine for injecting dylibs into running mac processes at runtime. hooks symbols, swizzles methods, and patches behavior live — no recompile, no relaunch. mostly a playground for poking at how macOS resolves dynamic libraries and where the seams are between an app and the system.</p>
+            <p class="dim small">no audio.</p>
+          </div>
+        </div>
+
+        <div class="tinker-entry">
+          <div class="tinker-video">
+            <video controls preload="metadata" playsinline>
+              <source src="/videos/vibetrain.mp4" type="video/mp4" />
+              <track kind="subtitles" srclang="en" label="english" src="/videos/vibetrain.vtt" default />
+              your browser doesn't support html5 video.
+            </video>
+          </div>
+          <div class="tinker-text">
+            <strong>vibetrain</strong>
+            <p>a pipeline for training and fine-tuning ai models straight from prompts. describe the dataset and objective in plain english; vibetrain handles data prep, config, the training loop, and eval. the goal is to collapse the gap between "i have an idea for a model" and "i have a checkpoint i can use".</p>
+          </div>
+        </div>
+      </section>
+      -->
+
 
     </main>
   </body>
